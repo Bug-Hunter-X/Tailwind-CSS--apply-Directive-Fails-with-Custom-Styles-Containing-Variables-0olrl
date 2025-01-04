@@ -1,0 +1,25 @@
+To resolve this, avoid using `@apply` with styles containing variables or complex selectors. Instead, use standard CSS classes or consider using a preprocessor like Sass or Less for better variable management.
+
+**Solution 1 (Using standard classes):**
+
+```css
+:root {
+  --primary-color: #007bff;
+}
+
+.button {
+  background-color: var(--primary-color); /* Use standard CSS */
+}
+```
+
+**Solution 2 (Using a preprocessor like Sass):**
+
+```scss
+$primary-color: #007bff;
+
+.button {
+  background-color: $primary-color; 
+}
+```
+
+This approach offers better organization and maintainability for your custom styles.  It avoids the limitations of `@apply` in handling dynamic values and complex selectors.
