@@ -1,0 +1,17 @@
+This bug occurs when using Tailwind CSS's `@apply` directive with custom styles that contain variables or complex selectors.  The `@apply` directive might not correctly expand or resolve these custom styles, leading to unexpected visual results or CSS errors. For instance:
+
+```css
+:root {
+  --primary-color: #007bff;
+}
+
+.button {
+  @apply bg-primary; /* This might not work correctly */
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+```
+
+The `@apply` directive might fail to replace `bg-primary` with `background-color: var(--primary-color)`, potentially resulting in a missing background or incorrect color.
